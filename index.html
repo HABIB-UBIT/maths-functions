@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js"
+    integrity="sha512-47N5yVdAeXJ+9qstVMTH2Z0EpX618sjYZcswRwhpldSTD0IbW6yQPtzg4RLrPp/2+TIgEF1elT68/ZBu82nqJA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    
+    <form onsubmit="log(); return false">
+        <h1>LOG:</h1><input type="number" id="num1" required>
+        <button type="submit">log 2</button>
+    </form>
+    <h3 id="resultlog"></h3>
+
+    <form onsubmit="sqrt(); return false">
+        <h1>SQUARE ROOT:</h1><input type="number" id="num2" required>
+        <button type="submit">Square root</button>
+    </form>
+    <h3 id="resultsqrt"></h3>
+
+    <!-- <form onsubmit="simp(); return false">
+        <h1>Simplification</h1><input type="string" id="num3" required>
+        <button type="submit">Simplification</button>
+    </form>
+    <h3 id="resultsimp"></h3> -->
+
+
+    <script>
+        let log = () => {
+            let inputlog = +document.querySelector("#num1").value;
+            let result = math.log(inputlog ,2)
+            document.querySelector("#resultlog").innerHTML = result;
+        }
+
+        let sqrt = () => {
+            let inputsqrt = +document.querySelector("#num2").value;
+            let result = math.sqrt(inputsqrt)
+            document.querySelector("#resultsqrt").innerHTML = result;
+        }
+
+        // let simp = () => {
+        //     let inputsimp = document.querySelector("#num3").value;
+        //     let result = math.simplify(inputsimp).toString()
+        //     document.querySelector("#resultsimp").innerHTML = result;
+        // }
+
+    </script>
+</body>
+</html>
